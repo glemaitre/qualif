@@ -1,0 +1,372 @@
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+\usepackage[utf8]{inputenc}
+\usepackage{multibib}
+% personal data
+\firstname{Guillaume}
+\familyname{Lemaitre}
+\title{INRIA Parietal \newline \small{\texttt{\textbf{Liens rapides: {\\\url{https://glemaitre.github.io} \\ \url{https://github.com/glemaitre} \\ \url{https://scholar.google.com/citations?user=fmnnGf4AAAAJ&hl=en}}}}}}
+\extrainfo{86 Rue Mar\'echal Foch, $2^{nd}$ floor, 71200 Le Creusot}
+\phone{+33 (0) 761 104 782}
+\email{guillaume.lemaitre@inria.fr}
+\photo[64pt]{picture.png}
+
+\newcommand{\up}[1]{\ensuremath{^\textrm{\scriptsize#1}}}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.text}
+\usepackage{ifthen}
+
+% the ConTeXt symbol
+\def\ConTeXt{%
+  C%
+  \kern-.0333emo%
+  \kern-.0333emn%
+  \kern-.0667em\TeX%
+  \kern-.0333emt}
+%\definecolor{web}{rgb}{0.2,0.2,0.2}
+%\definecolor{web}{rgb}{0.5,0.5,0.5}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+% \section{\textbf{Myself in a Nutshell}}
+
+% \tikzset{
+%   orig/.style={
+%     hist 1/.style={fill=red!70!gray},
+%     hist 2/.style={fill=blue!60!white},
+%     hist 3/.style={fill=green!50!gray},
+%     arrow group/.style={draw,color=black,very thick,latex-latex},
+%     target/.style={fill=pink!60!black,draw=black,
+%       line width=1pt,double distance=1pt,double=white},
+%     rev text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=black,reverse path}
+%     },
+%     text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=black,
+%       },
+%     },
+%     major tick/.style={draw=white,thick},
+%     minor tick/.style={draw=white,thin,draw opacity=.5},
+%     tick label/.style={font=\tiny\bfseries},
+%     text=black,
+%     font=\bfseries\sffamily,
+%   },
+%   dartstyle/.style={
+%     hist 1/.style={fill=red!80!white},
+%     hist 2/.style={fill=yellow!60!white},
+%     hist 3/.style={fill=green!70!black},
+%     arrow group/.style={draw=white,white,very thick,latex-latex},
+%     target/.style={fill=black,draw=black,
+%       line width=1pt,double distance=1pt,double=white},
+%     rev text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=white,reverse path}
+%     },
+%     text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=white}
+%     },
+%     major tick/.style={draw=white,thick},
+%     minor tick/.style={draw=white,thin,draw opacity=.5},
+%     tick label/.style={font=\tiny\bfseries},
+%     text=white,
+%     font=\bfseries\sffamily,
+%   },
+%   clearstyle/.style={
+%     hist 1/.style={fill=red!80!white},
+%     hist 2/.style={fill=yellow!60!white},
+%     hist 3/.style={fill=green!70!black},
+%     arrow group/.style={draw=black,black,very thick,latex-latex},
+%     target/.style={fill=white,draw=white,
+%       line width=1pt,double distance=1pt,double=black},
+%     rev text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=black,reverse path}
+%     },
+%     text on arc/.style={
+%       decorate,decoration={text along path,
+%         text={##1},text align={align=center},
+%         text color=black}
+%     },
+%     major tick/.style={draw=black,thick,draw opacity=.75},
+%     minor tick/.style={draw=black,thin,draw opacity=.5},
+%     tick label/.style={font=\tiny\bfseries},
+%     text=black,
+%     font=\bfseries\sffamily,
+%   },
+% }
+
+% \def\astep{12} % step (degree) between sectors
+% \def\mstep{4.5} % half width (degree) of each sector
+% \def\min{8mm} % min distance from center
+% \def\max{4cm} % max distance from center
+
+% \def\mydata{%
+%   Medical Imaging/{%
+%     Breast/{5,25,20},%
+%     Prostate/{5,5,90},%
+%     Retinopathy/{10,20,30},%
+%     US/{5,25,20},%
+%     MRI/{5,5,90},%
+%     OCT/{10,20,30},%
+%   },%
+%   Machine Learning/{%
+%     Classifier/{5,5,90},%
+%     Unbalancing/{10,10,70},%
+%     Feat. Extr./{10,30,50},%
+%     Feat. Sel./{10,10,60},%
+%     Feat. Norm./{10,30,60},%
+%   },%
+%   Computer Vision/{%
+%     Calibration/{10,20,20},%
+%     Tracking/{10,20,10},%
+%     Img. Proc./{10,20,50},%
+%     Hardware/{20,10,5},%
+%   },%
+%   Business Innovation/{%
+%     Busi. Model/{10,20,30},%
+%     Tech. Transf./{10,40,20},%
+%     Valorization/{10,20,30},%
+%   },%
+%   Education/{%
+%     Vulgarization/{10,20,40},%
+%     Teaching/{10,10,60},%
+%   }%
+% }
+% \begin{minipage}{1.\linewidth}
+%   \centering
+% \begin{tikzpicture}[clearstyle]
+%   \tikzset{
+%     declare function={
+%       secttoangle(\sect)=(\sect)*\astep;
+%       percenttodist(\percent)=\min+(\max-\min)/100*\percent;
+%     },
+%   }
+
+%   \path[target]
+%   circle(\max+3cm);
+
+%   \def\cursectinit{-.666}
+%   \foreach \curgroup/\curdata in \mydata {
+%     \foreach \curlabel/\values [count=\cp] in \curdata {
+%       % angle for this current label
+%       \pgfmathsetmacro{\angle}{secttoangle(\cursectinit+\cp)}
+%       % percent
+%       \xdef\total{0}
+%       % histogram
+%       \foreach \val [count=\cv] in \values {
+%         \pgfmathsetmacro{\nexttotal}{\total+\val}
+%         \pgfmathsetmacro{\dmin}{percenttodist(\total)}
+%         \pgfmathsetmacro{\dmax}{percenttodist(\nexttotal)}
+%         % sector
+%         \path[hist \cv=\angle] (\angle+\mstep:\dmin pt)
+%         arc(\angle+\mstep:\angle-\mstep:\dmin pt) -- (\angle-\mstep:\dmax pt)
+%         arc(\angle-\mstep:\angle+\mstep:\dmax pt) -- cycle;
+%         % iteration
+%         \xdef\total{\nexttotal}
+%       }
+%       % label (with autorotation)
+%       \pgfmathtruncatemacro{\revlab}{and(\angle>90,\angle<270)?1:0}
+%       \ifthenelse{\equal{\revlab}{1}}{
+%         \node[rotate=180+\angle,anchor=east] at (\angle:\max) {\curlabel};
+%       }{
+%         \node[rotate=\angle,anchor=west] at (\angle:\max) {\curlabel};
+%       }
+%     }
+%     % group limits
+%     \pgfmathsetmacro{\newsectinit}{\cursectinit+\cp}
+%     \pgfmathsetmacro{\angleinit}{secttoangle(\cursectinit)-\mstep}
+%     \pgfmathsetmacro{\anglefinal}{secttoangle(\newsectinit)+\mstep}
+%     % group label
+%     {
+%       \Large\bfseries\sffamily
+%       \pgfmathtruncatemacro{\anglem}{(\angleinit+\anglefinal)/2}
+%       \pgfmathtruncatemacro{\revtext}{and(\anglem>0,\anglem<180)?1:0}
+%       \ifthenelse{\equal{\revtext}{1}}{
+%         \draw[rev text on arc=\curgroup] (\angleinit:\max+2.5cm)
+%         arc(\angleinit:\anglefinal:\max+2.5cm);
+%       }{
+%         \draw[text on arc=\curgroup] (\angleinit:\max+2.5cm+.5em)
+%         arc(\angleinit:\anglefinal:\max+2.5cm+.5em);
+%       }
+%     }
+%     % group arrow
+%     \path[arrow group]
+%     (\angleinit:\max+2.3cm) arc(\angleinit:\anglefinal:\max+2.3cm);
+%     %iteration
+%     \pgfmathsetmacro{\newsectinit}{\newsectinit+1}
+%     \xdef\cursectinit{\newsectinit}
+%   }
+
+%   % level ticks
+%   \pgfmathsetmacro{\angleinit}{secttoangle(0)}
+%   \pgfmathsetmacro{\anglefinal}{secttoangle(\cursectinit-1)+\mstep}
+%   % major ticks with labels
+%   \foreach \percent in {0,50,100}{
+%     \pgfmathsetmacro{\dist}{percenttodist(\percent)}
+%     % tick
+%     \path[major tick] (\angleinit:\dist pt)
+%     arc(\angleinit:\anglefinal:\dist pt);
+%     % label
+%     \node[tick label,below,rotate=secttoangle(0)]
+%     at ({secttoangle(0)}:\dist pt) {\percent\%};
+%   }
+%   % minor ticks
+%   \foreach \percent in {10,20,30,40,60,70,80,90}{
+%     \pgfmathsetmacro{\dist}{percenttodist(\percent)}
+%     % tick
+%     \path[minor tick] (\angleinit:\dist pt)
+%     arc(\angleinit:\anglefinal:\dist pt);
+%   }
+
+%   % % legend
+%   % \foreach \mycat [count=\c] in {Bad,Mediocre,Good}{
+%   %   \path[hist \c=0] (2.75,-.5-.5*\c) rectangle ++(.2,.2) ++(0,-.1)
+%   %   node[right]{\mycat};
+%   % }
+% \end{tikzpicture}
+% \end{minipage}
+\vspace{-1.5cm}
+\section{\textbf{Education}}
+\cventry{2016--2018}{\textbf{Post-doc}}{\newline INRIA Saclay
+Ile-de-France, \'equipe PARIETAL \newline Paris-Saclay Center for Data Science}{Paris-Saclay (France)}{}{}
+\cventry{2012--2016}{\textbf{Doctorat en co-tutelle}}{\newline Universitat de Girona, Universit\'e de Bourgogne}{Girona (Spain), Le Creusot (France)}{}{}
+\cvitem{Titre}{Computer-aided diagnosis for prostate cancer using multi-parametric MRI} \cvitem{Description}{Des m\'ethodes bas\'es sur l'apprentissage automatique et statistiques ont \'et\'e d\'evelop\'ees afin de permettre la fusion de donn\'ees provenant de modalit\'es IRM diff\'erentes.}%\cvitem{Description}{A set of machine learning and pattern recognition tools are developed to be integrated in computer-aided diagnosis (CAD) systems to detect prostate cancers. Particularly, the main objective is to fuse multi-parametric MRI information to obtain probability maps.} %\cvitem{Description}{The PhD project will be focused on developing a computer aided diagnosis (CAD) for prostate cancer to guide doctors during biopsy and follow-up exams. This work is the continuity of two PhDs based on information fusion of two medical imaging types (TRUS and MRI) in order to obtain a real-time and accurate localization-navigation system. It should help to guide the clinicians during prostatic biopsy exam. However, no information about potential cancer areas is given at this stage. Our contribution would be twofold: (i) improve the previous work of information fusion to obtain an accurate and real-time localization-navigation system during the biopsy and follow-up and (ii) incorporate information about potential cancer location using functional MRI in order to take samples from high risk areas.}
+\cventry{2012--2014}{\textbf{Master in Business Innovation and Technology Management (BITM)}}{\newline Universitat de Girona}{Girona (Spain)}{}{}
+\cvitem{Titre}{\textit{Valorisation of computerized technology in the health care sector}} \cvitem{Description}{Dans ce m\'emoire, une m\'ethodologie est propos\'ee pour l'aide \`a la prise de d\'ecision concernant les probl\'ematiques de valorisation et de transfert de connaissances dans le secteur de la sant\'e.} %\cvitem{Description}{Since the last 30 to 20 years, the universities have been affected a new missions to their original teaching and research duties: an economic development mission. More precisely, it has been pointed out that the research carried out in laboratories attached to universities do not flow back to the society. The new universities mission is therefore corresponding to valorise or in other words transfer the knowledge developed in the laboratories back to society. Thus, some structures were created inside the university in order to fill this gap: Technology Transfer Office (TTO). These entities are in charge to promote and disseminate the worked developed inside the universities. The ultimate aim of this thesis will be to provide a decision making framework in order to elaborate some innovative  possible business models so as to valorise specific research carried out in universities.}
+\cventry{2009--2011}{\textbf{Master of Excellence Erasmus Mundus in Vision and Robotics (ViBOT)}}{\newline Heriot-Watt University, Universitat de Girona, Universit\'e de Bourgogne}{Edinburgh (Scotland), Girona (Spain), Le Creusot (France)}{}{ \textbf{- Mention Bien}}
+\cvitem{---}{\textsc{M\'emoire de Master} {\newline Universit\'e de Bourgogne}{ Dijon (France)}}
+\cvitem{Titre}{\textit{Absolute Quantification in 1H MRSI of the Prostate at 3T}} \cvitem{Description}{Mise en oeuvre d'une m\'ethode de quantification absolue de m\'etabolites pour l'aide au diagnostique du cancer de la prostate.\newline \textbf{- Pr\'esentation s\'electionn\'ee pour le ViBOT Day 2011}}
+\cventry{2008--2009}{\textbf{Licence 3 - Mention Electronique, Signal et Image}}{\newline Universit\'e de Bourgogne}{Dijon (France)}{}{ \textbf{- Mention Tr\`es Bien - rang $\textbf{1}^{er}$}}
+\cventry{2006--2008}{\textbf{D.U.T - D\'epartement G\'enie \'Electrique et Informatique Industrielle}}{\newline Universit\'e de Bourgogne}{ Le Creusot (France)}{}{ \textbf{- Mention Tr\`es Bien avec f\'elicitations du jury - rang $\textbf{2}^{i\`eme}$}}
+\cvitem{---}{\textsc{D.U.T Thesis} {\newline Heriot-Watt University}{ Edinburgh (Scotland)}}
+\cvitem{Titre}{\textit{Object Recognition dedicated at the Localization of an AUV (Autonomous Underwater Vehicle) for Student Autonomous Underwater Competition - Europe (SAUC-E 2008) - Winner of the competition}} \cvitem{Description}{D\'etection et reconnaissance de formes appliqu\'ees \`a la navigation sous-marine autonome.}
+\cventry{2005--2006}{\textbf{Baccalaureat S SVT}}{\newline Maurice Genevoix High School}{Decize (France)}{}{ - \textbf{Sp\'ecialit\'e}: Math\'ematiques \newline \textbf{- Mention Assez Bien}}
+\section{\textbf{Experience}}
+\cventry{2015}{\textbf{Attach\'e Temporaire d'Enseignement et Recherche (ATER)}}{Section 61}{IUT Le Creusot - Laboratorire LE2I - Le Creusot (France)}{}
+{- 96 heures d'enseignement:\newline
+ - Traitement du signal et introduction au language Python.\newline
+ - Introduction au traitement de l'image.\newline
+ - Cours de g\'enie logiciel.}
+\cventry{2014-2015}{\textbf{Acteur dans un projet Europ\'een ``Playful Coding''}}{Erasmus+}{IUT Le Creusot - Laboratoire LE2I - Le Creusot (France)}{}
+{}
+\cventry{2014-2015}{\textbf{Attach\'e Temporaire d'Enseignement et Recherche (ATER)}}{Section 61}{IUT Le Creusot - Laboratoire LE2I - Le Creusot (France)}{}
+{- 96 heures d'enseignement:\newline
+ - Traitement du signal et introduction au language Python.\newline
+ - Introduction au base de donn\'ees via Access et SQL.\newline
+ - Introduction \`a l'apprentissage statistique et automatique en utilisant Python.}
+\cventry{2014-2015}{\textbf{Vacations}}{Imagerie m\'edicale}{Universitat de Girona - Girona - (Spain)}{}
+{- Introduction des m\'ethodes de mise en correspondance et d'alignement en utilisant ITK.\newline
+ - Introduction \`a la segmentation en utilisant MevisLab.}
+\cventry{2011-2012}{\textbf{Emploi int\'erimaire}}{Reconnaissance de formes et d'objets}{Barcelona Digital - Barcelona (Spain) / Laboratoire LE2I - Le Creusot (France)}{}
+{- Chercheur pour le projet Rehabilita (\url{http://rehabilita.gmv.com/web/guest}).\newline
+ - Mise en oeuvre d'une m\'ethode de d\'etection et suivie de visage.\newline
+ - Mise en oeuvre d'une m\'ethode temps r\'eel pour la d\'etection de panneaux de signalisation.}
+\cventry{2010}{\textbf{Emploi int\'erimaire}}{Mise en oeuvre d'un logiciel de visualisation et de reconstruction de volumes medicaux.}{Universitat de Girona - Girona (Spain)}{}{}
+
+\section{\textbf{Bourses d'\'etudes}}
+\cventry{2012}{\textbf{Bourse OMJ}}{}{Minist\`ere des affaires \'etrang\`eres}{France}{}
+\cventry{2012}{\textbf{Bourse de doctorat FI-DGR}}{}{Generalitat de Catalunya - AGAUR}{Spain}{}
+\cventry{2011}{\textbf{Bourse de Master en recherche}}{}{R\'egion Bourgogne}{France}{}
+%\cventry{2010}{\textbf{Erasmus Spanish Scholarship}}{}{Spanish Ministry}{Spain}{}
+%\cventry{2010}{\textbf{Merit-based Scholarship}}{}{French Ministry}{France}{}
+\cventry{2010}{\textbf{Bourse du m\'erite d\'edi\'ee aux masters recherches}}{}{R\'egion Bourgogne}{France}{}
+%\cventry{2009}{\textbf{Spanish Ministry Mobility Scholarship}}{}{Spanish Ministry}{Spain}{}
+%\cventry{2009}{\textbf{Merit-based Scholarship}}{}{French Ministry}{France}{}
+%\cventry{2009}{\textbf{Erasmus French Scholarship}}{}{French Ministry}{France}{}
+%\cventry{2009}{\textbf{Mobility Grant}}{}{Burgundy Region}{France}{}
+%\cventry{2009}{\textbf{Region Mobility Scholarship}}{}{Burgundy Region}{France}{}
+\cventry{2009}{\textbf{Bourse Rotary}}{}{Club du Rotary Le Creusot}{France}{}
+\cventry{2009-2011}{\textbf{Bourse Erasmus Mundus}}{}{Heriot-Watt University, Universitat de Girona, Universit\'e de Bourgogne}{Scotland, Spain, France}{}
+%\cventry{2008}{\textbf{Erasmus French Scholarship}}{}{French Ministry}{France}{}
+%\cventry{2008}{\textbf{Mobility Grant}}{}{Burgundy Region}{France}{}
+
+\section{\textbf{Prix}}
+\cventry{July, 2008}{\textbf{Student Autonomous Underwater Competition - Europe}}{Nessie III - Heriot-Watt University}{}{}{ - Creation of an AUV - Nessie III\newline - Webpage: {\url{http://www.dstl.gov.uk/news_events/competitions/sauce/08/index.php}}}
+\cventry{July, 2008}{\textbf{THALES Special Award for innovation}}{Nessie III - Heriot-Watt University}{}{}{ - Webpage: {\url{http://www.dstl.gov.uk/news_events/competitions/sauce/08/index.php}}}
+
+\section{\textbf{Langues}}
+\cvlanguage{Fran\c{c}ais}{Natif}{}
+\cvlanguage{Anglais}{Courent}{
+Master Erasmus Mundus ViBOT enseign\'e en Anglais\\}
+\cvlanguage{Catalan}{Notions}{}
+\section{\textbf{Habilet\'e informatique}}
+\cvcomputer{OS}{Linux/Unix, Windows, DOS} {Programmation}{C/C++, Python, VB.net, VHDL, HTML, CSS}
+\cvcomputer {Environement} {Emacs, QT, VisualStudio.NET, Dev C++, Eclipse} {Scientifique}{Matlab, Maple, OpenCV, ITK, VTK}
+\cvcomputer{Typographie}{\LaTeX, Microsoft Office, Open Office} {Web}{Kompozer}
+
+
+\section{\textbf{Publications}}
+\subsection{Revues}
+\cventry{}{G. Lemaitre, F. Nogueira, and C. K. Aridas}{}{"Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning"}{\textit{ Journal of Machine Learning Research}, Accepted - To appear, pp ---, 2017}{}
+\cventry{}{D. Sidibe, S. Sankar, G. Lemaitre, M. Rastgoo, J. Massich, C. Y. Cheung, G. S. W. Tan, D. Milea, E. Lamoureux, T. Y. Wong, and F. Meriaudeau}{}{"An anomaly detection approach for the identification of DME patients using SD-OCT images"}{\textit{ Computer Methods and Programs in Biomedicine}, vol 139, pp 109-117, 2017}{}
+\cventry{}{G. Lemaitre, M. Rastgoo, J. Massich, C. Y. Cheung, T. Y. Wong, E. Lamoureux, D. Milea, F. Meriaudeau, and D. Sidibe}{}{"Classification of SD-OCT Volumes using Local Binary Patterns: Experimental Validation for DME detection"}{\textit{ Journal of Ophthalmology}, vol. 2016, pp ---, Mai 2016}{}
+\cventry{}{M. Belkacemi, C. Stolz, A. Mathieu, G. Lemaitre, J. Massich, and O. Aubreton}{}{"Non Destructive Testing based on a Scanning-From-Heating approach: Application to non-through Defect Detection and Fiber Orientation Assessment"}{\textit{ Journal of Eletronic Imaging}, vol. 24(6), pp 1-8, Nov/Dec 2015}{}
+\cventry{}{G. Lemaitre, R. Marti, J. Freixenet, J. C. Vilanova, P. M. Walker, and F. Meriaudeau}{}{"Computer-Aided Detection and Diagnosis for prostate cancer based on mono and multi-parametric MRI: A Review"}{\textit{ Computer in Biology and Medicine}, vol. 60, pp 8 - 31, 2015}{}
+\subsection{Conferences internationales}
+\cventry{}{J. Massich, M. Rastgoo, G. Lemaitre, C. Cheung, T. Y. Wong, D. Sidibe, and F. Meriaudeau}{}{"Classifying DME vs normal SD-OCT volumes: A review"}{\textit{ 23\textsuperscript{rd} International Conference on Pattern Recognition (ICPR) 2016}. Cancun: Mexico (December 2016)}{}
+\cventry{}{K. Alsaih, G. Lemaitre, J. Massich, M. Rastgoo, D. Sidibe, T. Y. Wong, E. Lamoureux, D. Milea, C. Leung and, F. Meriaudeau}{}{"Classification of SD-OCT volumes with multi-pyramids, LBP and HoG descriptors: Application to DME detection"}{\textit{ 38\textsuperscript{th} International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC) 2016}. Orlando: USA (August 2016)}{}
+%\cventry{}{A. Pampouchidou, K. Marias, M. Tsiknakis, P. Simos, F. Yang, G. Lemaitre, and F. Meriaudeau}{}{"Video-based depression detection using local curvelet binary patterns in pairwise orthogonal planes"}{\textit{ 38\textsuperscript{th} International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC) 2016}. Orlando: USA (August 2016)}{}
+%\cventry{}{S. Hoffmann, M. Lobbes, I. Houben, K. Pinker-Domenig, G. Wengert, B. Burgeth, U. Meyer-Bäse, G. Lemaitre, and A. Meyer-Baese}{}{"Computer-aided diagnosis of diagnostically challenging lesions in breast MRI: a comparison between a radiomics and a feature-selective approach"}{\textit{ SPIE Commercial+ Scientific Sensing and Imaging}. Baltimore: USA (July 2016)}{}
+\cventry{}{M. Belkacemi, C. Stolz, A. Mathieu, G. Lemaitre, and O. Aubreton}{}{"A combined three-dimensional digitisation and subsurface defect detection data using active infrared thermography"}{\textit{ 13\textsuperscript{th} Quantitative Infrared Thermography Conference (QIRT)}. Gdansk: Poland (July 2016)}{}
+\cventry{}{M. Belkacemi, J. Massich, G. Lemaitre, C. Stolz, V. Daval, G. Pot, O. Aubreton, R. Collet, and F. Meriaudeau}{}{"Wood fiber orientation assessment based on punctual laser beam excitation: A preliminary study"}{\textit{ 13\textsuperscript{th} Quantitative Infrared Thermography Conference (QIRT)}. Gdansk: Poland (July 2016)}{}
+\cventry{}{M. Rastgoo, G. Lemaitre, J. Massich, O. Morel, F. Marzani, R. Garcia, and F. Meriaudeau}{}{"Study of Data Imbalancing for Melanoma Classification"}{\textit{ 3\textsuperscript{rd} International Conference on BIOIMAGING}. Rome: Italy (February 2016)}{}
+\cventry{}{G. Lemaitre, M. Rastgoo, J. Massich, J. C. Vilanova, P. M. Walker, J. Freixenet, A. Meyer-Baese, F. Meriaudeau, and R. Marti}{}{"Normalization of T2W-MRI prostate images using Rician a priori"}{\textit{ SPIE Medical Imaging 2016}. San Diego: USA (February 2016)}{}
+\cventry{}{M. Rastgoo, G. Lemaitre, O. Morel, J. Massich, F. Marzani, R. Garcia, and D. Sidibe}{}{"Classification of melanoma lesions using sparse coded features and random forests"}{\textit{ SPIE Medical Imaging 2016}. San Diego: USA (February 2016)}{}
+%\cventry{}{A. Meyer-Baese, J. Massich, G. Lemaitre, and M. Rastgoo}{}{"Real-Time Optical Flow with Theoretically Justified Warping Applied to Medical Imaging"}{\textit{ Breast Image Analysis Workshop (BIA), Medical Image Computing and Computer Assisted Interventions (MICCAI) 2015}. Munich: Germany (October 2015)}{}
+\cventry{}{J. Massich, G. Lemaitre, J. Marti, and F. Meriaudeau}{}{"An Optimization Approach to Segment Breast Lesions in Ultra-Sound Images using Clinically Validated Visual Cues"}{\textit{ Breast Image Analysis Workshop (BIA), Medical Image Computing and Computer Assisted Interventions (MICCAI) 2015}. Munich: Germany (October 2015)}{}
+\cventry{}{G. Lemaitre, M. Rastgoo, J. Massich, S. Sankar, F. Meriaudeau, and D. Sidibe}{}{"Classification of SD-OCT volumes with LBP: Application to DME detection"}{\textit{ Ophthalmic Medical Image Analysis Workshop (OMIA), Medical Image Computing and Computer Assisted Interventions (MICCAI) 2015}. Munich: Germany (October 2015)}{}
+\cventry{}{J. Massich, G. Lemaitre, J. Marti, and F. Meriaudeau}{}{"Brest Ultra-Sound image Segmentation: an Optimization approach based on super-pixels and high-level descriptors"}{\textit{ International Conference on Quality Control and Artificial Vision (QCAV) 2015}. Le Creusot: France (June 2015)}{}
+\cventry{}{G. Lemaitre, J. Massich, R. Marti, J. Freixenet, J. C. Vilanova, P. M. Walker, D. Sidibe, and F. Meriaudeau}{}{"A Boosting Approach for Prostate Cancer Detection using Multi-parametric MRI"}{\textit{ International Conference on Quality Control and Artificial Vision (QCAV) 2015}. Le Creusot: France (June 2015)}{}
+\cventry{}{G. Lemaitre, A. Bikfalvi, J. Llach, J. Massich, and F. Julian}{}{"Business Model Design for University Technology Valorisation"}{\textit{ International Technology, Education and Development Conference (INTED) 2015}. Madrid: Spain (March 2015)}{}
+\cventry{}{M. Rastgoo, G. Lemaitre, X. Rafael, F. Miralles, and P. Casale}{}{"Pruning AdaBoost for Continuous Sensors Mining Applications"}{\textit{ Ubiquitous Data Mining Workshop, 20th European Conference in Artificial Intelligence 2012}. Montpellier: France (August 2012)}{}
+\cventry{}{G. Lemaitre, E. Vargiu, J.A. Lorenzo Fern\'andez, and F. Miralles}{}{"Real-Time 2D Face Detection and Features-based Tracking in Video"}{\textit{ IADIS Multi Conference in Computer Science in Computer Graphics, Visualization, Computer Vision and Image Processing 2012}. Lisbon: Portugal (July 2012)}{}
+\subsection{Rapport technique}
+\cventry{}{J. Cartwright, N. Johnson, B. Davis, Z. Qiang, T.L. Bravo, A. Enoch, G. Lemaitre, H. Roth, and Y. Petillot}{}{"Nessie III Autonomous Underwater Vehicle for SAUC-E 2008"}{\textit{The Unmanned Underwater Vehicle Showcase (UUVS)}, 2008}{}
+%\cventry{}{G. Lemaitre and P.M. Walker}{}{"Absolute Quantification in 1H MRSI of the Prostate at 3T"}{\textit{Universit\'e de Bourgogne, Universitat de Girona, Heriot-Watt University}, 2011}{}
+
+%\section{\textbf{Academic Background}}
+%\cvitem{Image Processing}{Segmentation, Classification, Features extraction, Edges detection, Medical Imaging, Wavelets, Denoising, Morphological Operations, Super resolution, Sparsity}
+%\cvitem{Signal Processing}{Digital Signal Processing, Laplace Transform, \textit{z} Transform, Fourier Transform, Wavelet Transform}
+%\cvitem{Electronic}{Filtering, FPGA}
+%\cvitem{Electronical}{Power Electrical, Engine electric, Alternators}
+
+% \subsection{\textbf{Project}}
+% \cventry{2011}{\textbf{Master Project - 3D Digitization}}{3D Faces Tracking using Active Appearance Model (AAM)}{Universit\'e de Bourgogne - Le Creusot (France)}{}
+% { - Implementation of an interface allowing to track faces using Active Appearance Model (AAM).}
+% \cventry{2011}{\textbf{Master Project - Pattern Recognition}}{Wood Crack Detection}{Universit\'e de Bourgogne - Le Creusot (France)}{}
+% { - Implementation of segementation and classification methods in order to detect crack inside plank.}
+% \cventry{2011}{\textbf{Master Project - Medical Imaging}}{Management and Post-Processing of Prostate Perfusion MRI}{Universit\'e de Bourgogne - Le Creusot (France)}{}
+% { - Implementation of an interface in order to compute features of perfusion imaging (Wash-in, Wash-out, Maximum contrast enhancement).}
+% \cventry{2010}{\textbf{Master Project - Real-Time Image Processing}}{Face detection and Tracking using Viola and Jones algorithm modified}{Universitat de Girona - Girona (Spain)}{}
+% { - Implementation of an interface allowing to detect an track face using Viola and Jones method}
+% \cventry{2010}{\textbf{Master Project - Scene Segmentation}}{Pascal Project}{Universitat de Girona - Girona (Spain)}{}
+% { - Realize task proposed inside the Pascal project - Classification.}
+% \subsection{\textbf{Research}}
+% \cventry{2011}{\textbf{Absolute Quantification in 1H MRSI of the Prostate at 3T}}{Universit\'e de Bourgogne - Dijon (France)}{}{}{
+% - Implementation of a method to find absolute concentration of metabolites which will lead to an automatic classification for prostate cancer detection.}
+% \cventry{2008}{\textbf{Object Recognition dedicated at the Localization of an AUV (Autonomous Underwater Vehicle) for Student Autonomous Underwater Competition - Europe (SAUC-E 2008)}}{Universit\'e de Bourgogne - Le Creusot (France) - Heriot-Watt University - Edinburgh (Scotland)}{}{}{
+% - Detection and Recognition of different objects. The implementation had to be real-time to be implemented inside an AUV.}
+% \cventry{2008}{\textbf{HeartLearning}}{Universit\'e de Bourgogne - Le Creusot (France)}{}{}{
+% - Implementation of a software allowing an analysis and an interpretation of cardiometrics data for an optimisation of cycling performance.}
+
+% \section{\textbf{Interests and Activities}}
+% \cvitem{Cycling}{Member of cycling team ASC Fours since October 2003: \newline - Vice-president of UFOLEP since 2006. \newline - President of FFC since 2009. \newline - Champion of Nievre on road in 2009 and vice-champion of Nievre on road in 2006, 2007.  \newline - Champion of Burgundy on road in 2009 and vice-champion of Burgundy on road in 2007. \newline - Champion of Burgundy on TT by team in 2009 and vice-champion of Burgundy on TT by Team in 2007. \newline - 8 victories in 2009 and 74th in France National Championships.}
+
+\end{document}
